@@ -5,7 +5,8 @@
         <div class="col-xs-12">
           <router-link to="/">Quotes</router-link> |
           <router-link to="/new-quote">New Quote</router-link> |
-          <router-link to="/signup">Sign up</router-link>
+          <router-link to="/signup">Sign up</router-link> |
+          <router-link to="/signin">Sign in</router-link> |
         </div>
       </div>
       <hr>

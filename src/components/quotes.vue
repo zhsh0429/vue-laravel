@@ -19,11 +19,13 @@
     },
     methods: {
       onGetQuotes() {
+        const token = localStorage.getItem('token');
         //TODO: change the URL
-        axios.get('http://192.168.10.10/api/quotes')
+        axios.get('http://192.168.10.10/api/quotes?token=' + token)
           .then(
             response => {
-              console.log(response)
+              console.log(response);
+              this.quotes = response.data.quotes
             }
           )
           .catch(

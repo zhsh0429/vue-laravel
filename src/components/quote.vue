@@ -1,17 +1,17 @@
 <template>
-  <div class="card ">
-    <div class="card-block">
+  <div class="card text-center">
+    <div class="card-header">
       {{ qt.content }}
     </div>
-    <div class="card-footer">
+    <div class="card-block">
       <div v-if="editing">
         <input type="text" v-model="editValue"/>
-        <a @click="onUpdate">Save</a>
-        <a @click="onCancel">Cancel</a>
+        <a href="#" class="card-link" @click="onUpdate">Save</a>
+        <a href="#" class="card-link" @click="onCancel">Cancel</a>
       </div>
       <div v-if="!editing">
-        <a @click="onEdit">Edit</a>
-        <a @click="onDelete">Delte</a>
+        <a href="#" class="card-link" @click="onEdit">Edit</a>
+        <a href="#" class="card-link" @click="onDelete">Delete</a>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
         editValue: this.qt.content
       }
     },
-    method: {
+    methods: {
       onEdit() {
         this.editing = true;
         this.editValue = this.qt.content
@@ -38,8 +38,9 @@
       },
       onDelete() {
         this.$emit('quoteDeleted', this.qt.id);
+        const token = localStorage.getItem('token');
         //TODO: change the URL
-        axios.delete('URL' + this.qt.id)
+        axios.delete('http://192.168.10.10/api/quote/' + this.qt.id + '?token=' + token)
           .then(
             response => console.log(response)
           )
@@ -50,8 +51,9 @@
       onUpdate() {
         this.editing = false;
         this.qt.content = this.editValue;
+        const token = localStorage.getItem('token');
         //TODO: change the URL
-        axios.put('URL' + this.qt.id, {content: this.editValue})
+        axios.put('http://192.168.10.10/api/quote/' + this.qt.id + '?token=' + token, {content: this.editValue})
           .then(
             response => console.log(response)
           )

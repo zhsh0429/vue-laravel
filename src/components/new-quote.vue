@@ -19,8 +19,9 @@
     },
     methods: {
       onSubmitted () {
+        const token = localStorage.getItem('token');
         //TODO: Change the url to the real back-end address
-        axios.post('http://back-end/api/quote',
+        axios.post('http://192.168.10.10/api/quote?token=' + token,
           {content: this.quoteContent})
           .then(
             (response) => console.log(response)
