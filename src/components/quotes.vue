@@ -20,7 +20,7 @@
     methods: {
       onGetQuotes() {
         //TODO: change the URL
-        axios.get('URL')
+        axios.get('http://192.168.10.10/api/quotes')
           .then(
             response => {
               console.log(response)

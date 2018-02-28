@@ -1,10 +1,10 @@
 <template>
-  <form>
-    <div @submit.prevent="onSubmitted" class="form-group">
+  <form @submit.prevent="onSubmitted">
+    <div class="form-group">
       <label for="content">Content</label>
       <input type="text" id="content" class="form-control" v-model="quoteContent"/>
-      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </template>
 
