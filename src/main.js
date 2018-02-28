@@ -10,7 +10,7 @@ import Signin from './components/signin.vue'
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '', component: Quotes },
+  { path: '/quotes', component: Quotes },
   { path: '/new-quote', component: NewQuote},
   { path: '/signup', component: Signup},
   { path: '/signin', component: Signin},

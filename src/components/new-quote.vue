@@ -24,7 +24,10 @@
         axios.post('http://192.168.10.10/api/quote?token=' + token,
           {content: this.quoteContent})
           .then(
-            (response) => console.log(response)
+            (response) => {
+              console.log(response);
+              this.$router.push('/quotes');
+            }
           ).catch(
           (error) => console.log(error)
         );
