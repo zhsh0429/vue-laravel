@@ -1,6 +1,10 @@
 # vue-laravel
 
-> This is the front-end of a vue-laravel RESTFUL API project.
+> This is a VueJS code sample for a vue+laravel project.
+
+The code provides:
+ * CRUD of the quotes by calling RESTful backend.
+ * Signup/Sign in functions by JSON Token Authentication (API is provided by backend) 
 
 ## Build Setup
 
